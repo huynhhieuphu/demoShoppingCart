@@ -78,7 +78,7 @@ class UserController extends Controller
             return redirect()->route('admin.user.edit', ['user' => $id]);
         }
         $request->session()->flash('msg','<div class="alert alert-danger"> <i class="fas fa-exclamation-triangle"></i> Update Failed </div>');
-        return back();
+        return back()->withInput();
     }
 
     public function destroy()

@@ -64,7 +64,7 @@
                         </td>
                         <td colspan="2" width="12%">
                             <form action="{{route('admin.category.destroy', ['category' => $category->id])}}"
-                                  method="post" class="">
+                                  method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm"

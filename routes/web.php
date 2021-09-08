@@ -17,6 +17,18 @@ Route::get('/', 'HomeController@index')->name('home.index');
 Route::get('/the-loai/{slug}', 'HomeController@category')->name('home.category');
 Route::get('/san-pham/{slug}', 'HomeController@product')->name('home.product');
 
+// login shopping
+Route::group([
+    'as' => 'customer'
+], function(){
+    Route::get('/dang-nhap', 'CustomerController@login')->name('login');
+    Route::post('/dang-nhap', 'CustomerController@chkLogin')->name('chkLogin');
+    Route::post('/dang-xuat', 'CustomerController@logout')->name('logout');
+    Route::get('/dang-ky', 'CustomerController@create')->name('create');
+    Route::post('/dang-ky', 'CustomerController@store')->name('store');
+});
+
+
 // cart shopping
 Route::group([
     'prefix' => '/cart',
@@ -45,6 +57,7 @@ Route::group([
         'category' => 'CategoryController',
         'user' => 'UserController',
         'product' => 'ProductController',
+        'customer'=> 'CustomerController',
     ]);
 
     Route::get('/logout', 'LoginController@logout')->name('logout');

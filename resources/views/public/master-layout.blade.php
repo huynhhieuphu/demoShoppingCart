@@ -36,6 +36,15 @@
                 </li>
             </ul>
             <div class="d-flex">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mx-2">
+                    <li class="nav-item dropdown" style="display: none">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownRight" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Username</a>
+                        <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdownRight">
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Đăng nhập</a></li>
+                </ul>
                 <a href="{{route('cart.index')}}" class="btn btn-outline-dark">
                     <i class="bi-cart-fill me-1"></i>
                     Cart

@@ -1,4 +1,5 @@
 <?php
+// cấu hình menu - sidebar view admin
 return [
     ['href' => 'admin.site.index', 'font' => 'fas fa-fw fa-tachometer-alt', 'name' => 'Dashboard'],
     [
@@ -44,7 +45,7 @@ return [
         'name' => 'Customers',
         'sub-menu' => [
             [
-                'href' => 'admin.site.index',
+                'href' => 'admin.customer.index',
                 'name' => 'Customers'
             ],
         ]

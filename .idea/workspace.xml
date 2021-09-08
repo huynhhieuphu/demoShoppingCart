@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb36e542-4ac5-41e5-8645-eab78dc9448c" name="Default Changelist" comment="" />
+    <list default="true" id="fb36e542-4ac5-41e5-8645-eab78dc9448c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Models/Customer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/customer/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/customer/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/customer/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/06d2c6d3-984a-4d6f-8ff0-9e7777efce3f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/06d2c6d3-984a-4d6f-8ff0-9e7777efce3f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UpdateUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/site/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/site/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/master-layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/master-layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -45,6 +63,9 @@
   </component>
   <component name="FavoritesManager">
     <favorites_list name="LungCode" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -156,6 +177,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1wzclDNS9qOg0ZtBem8Dpb6FgOU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -166,17 +188,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/shop" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/shop" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/shop" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
+      <recent name="$PROJECT_DIR$/resources/views/shop" />
       <recent name="$PROJECT_DIR$/resources/views/admin" />
       <recent name="$PROJECT_DIR$/resources/views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/shop" />
     </key>
   </component>
   <component name="RunManager">
@@ -227,7 +250,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1629465007207</updated>
-      <workItem from="1629465011130" duration="133665000" />
+      <workItem from="1629465011130" duration="134027000" />
+      <workItem from="1630293243905" duration="565000" />
+      <workItem from="1630473383472" duration="246000" />
+      <workItem from="1630942827524" duration="31920000" />
     </task>
     <servers />
   </component>
@@ -239,6 +265,10 @@
       <screen x="31" y="23" width="1249" height="777" />
     </state>
     <state x="255" y="77" key="#com.intellij.execution.impl.EditConfigurationsDialog/31.23.1249.777@31.23.1249.777" timestamp="1629472492515" />
+    <state x="417" y="29" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1631001328505">
+      <screen x="31" y="23" width="1249" height="777" />
+    </state>
+    <state x="417" y="29" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/31.23.1249.777@31.23.1249.777" timestamp="1631001328505" />
     <state x="394" y="173" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1630055790820">
       <screen x="31" y="23" width="1249" height="777" />
     </state>
@@ -263,14 +293,23 @@
       <screen x="31" y="23" width="1249" height="777" />
     </state>
     <state width="244" height="457" key="HiddenNamespacesPopup/31.23.1249.777@31.23.1249.777" timestamp="1629472523241" />
-    <state x="476" y="342" key="NewPhpFileDialog" timestamp="1630140116961">
+    <state x="456" y="328" key="NewPhpFileDialog" timestamp="1631003713772">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="456" y="328" key="NewPhpFileDialog/0.0.1280.800@0.0.1280.800" timestamp="1631003713772" />
+    <state x="476" y="342" key="NewPhpFileDialog/31.23.1249.777@31.23.1249.777" timestamp="1631001229453" />
+    <state x="164" y="50" key="SettingsEditor" timestamp="1630473614151">
       <screen x="31" y="23" width="1249" height="777" />
     </state>
-    <state x="476" y="342" key="NewPhpFileDialog/31.23.1249.777@31.23.1249.777" timestamp="1630140116961" />
-    <state x="164" y="50" key="SettingsEditor" timestamp="1630134747320">
+    <state x="164" y="50" key="SettingsEditor/31.23.1249.777@31.23.1249.777" timestamp="1630473614151" />
+    <state x="324" y="98" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1630985742815">
       <screen x="31" y="23" width="1249" height="777" />
     </state>
-    <state x="164" y="50" key="SettingsEditor/31.23.1249.777@31.23.1249.777" timestamp="1630134747320" />
+    <state x="324" y="98" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/31.23.1249.777@31.23.1249.777" timestamp="1630985742815" />
+    <state x="247" y="136" width="816" height="550" key="find.popup" timestamp="1630999470912">
+      <screen x="31" y="23" width="1249" height="777" />
+    </state>
+    <state x="247" y="136" width="816" height="550" key="find.popup/31.23.1249.777@31.23.1249.777" timestamp="1630999470912" />
     <state x="321" y="186" key="run.anything.popup" timestamp="1630157835730">
       <screen x="31" y="23" width="1249" height="777" />
     </state>
