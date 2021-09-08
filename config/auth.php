@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+
 return [
 
     /*
@@ -12,6 +14,10 @@ return [
     | as required, but they're a perfect start for most applications.
     |
     */
+
+    // mặc định: Auth::attempt();
+    // Để sử dụng guard khác thì như sau
+    // ví dụ: 'cus' => Auth::guard('cus')->attempt(); hoặc Auth::guard('cus')->check()
 
     'defaults' => [
         'guard' => 'web',
@@ -41,11 +47,17 @@ return [
             'provider' => 'users',
         ],
 
+        'cus' => [
+            'driver' => 'session',
+            'provider' => 'customers',
+        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
             'hash' => false,
         ],
+
     ],
 
     /*
@@ -69,6 +81,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+        'customers' => [
+            'driver' => 'eloquent',
+            'model' => App\Customer::class,
         ],
 
         // 'users' => [
@@ -98,6 +114,11 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
+        ],
+        'customers' => [
+            'provider' => 'customers',
+            'table' => 'password_resets',
+            'expire' => 60,
         ],
     ],
 

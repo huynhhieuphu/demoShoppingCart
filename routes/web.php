@@ -19,20 +19,21 @@ Route::get('/san-pham/{slug}', 'HomeController@product')->name('home.product');
 
 // login shopping
 Route::group([
-    'as' => 'customer'
+    'as' => 'admin.customer.',
+    'namespace' => 'Admin',
 ], function(){
-    Route::get('/dang-nhap', 'CustomerController@login')->name('login');
-    Route::post('/dang-nhap', 'CustomerController@chkLogin')->name('chkLogin');
-    Route::post('/dang-xuat', 'CustomerController@logout')->name('logout');
-    Route::get('/dang-ky', 'CustomerController@create')->name('create');
-    Route::post('/dang-ky', 'CustomerController@store')->name('store');
+    Route::get('/dang-nhap', 'CustomerController@showLoginForm')->name('login.form');
+    Route::post('/dang-nhap', 'CustomerController@login')->name('login');
+    Route::get('/dang-xuat', 'CustomerController@logout')->name('logout');
+    Route::get('/dang-ky', 'CustomerController@showRegistrationForm')->name('register.form');
+    Route::post('/dang-ky', 'CustomerController@register')->name('register');
 });
-
 
 // cart shopping
 Route::group([
     'prefix' => '/cart',
-    'as' => 'cart.'
+    'as' => 'cart.',
+    'middleware' => 'chkLoginCus',
 ], function (){
     Route::get('/', 'CartController@index')->name('index');
     Route::get('/add/{id}', 'CartController@add')->name('add');

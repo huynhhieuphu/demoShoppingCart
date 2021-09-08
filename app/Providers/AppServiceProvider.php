@@ -28,17 +28,17 @@ class AppServiceProvider extends ServiceProvider
     {
         // Global Data - Sharing Data With All Views
 
-//        view()->composer('*', function ($view) {
-//            $view->with([
-//                'parentCategories' => Category::where(['parent_id' => 0, 'status' => 1])->get(),
-//                'cart' => new Cart(),
-//            ]);
-//        });
+        view()->composer('*', function ($view) {
+            $view->with([
+                'parentCategories' => Category::where(['parent_id' => 0, 'status' => 1])->get(),
+                'cart' => new Cart(),
+            ]);
+        });
 
-        View::share([
-            'parentCategories' => Category::where(['parent_id' => 0, 'status' => 1])->get(),
-            'cart' => new Cart(),
-        ]);
+//        View::share([
+//            'parentCategories' => Category::where(['parent_id' => 0, 'status' => 1])->get(),
+//            'cart' => new Cart(),
+//        ]);
 
     }
 }

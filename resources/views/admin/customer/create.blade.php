@@ -14,11 +14,11 @@
     <!-- Content Row -->
     <div class="row">
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            @if(!empty($msg)) {!! $msg !!} @endif
             <form action="{{route('admin.customer.store')}}" method="POST">
                 @csrf
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        @if(!empty($msg)) {!! $msg !!} @endif
                         <div class="form-group">
                             <label for="username">Username</label>
                             <input type="text" name="username" id="username"
