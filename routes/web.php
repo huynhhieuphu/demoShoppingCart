@@ -42,6 +42,16 @@ Route::group([
     Route::get('/clear', 'CartController@clear')->name('clear');
 });
 
+// checkout
+Route::group([
+    'prefix' => '/checkout',
+    'as' => 'checkout.',
+    'middleware' => 'chkLoginCus',
+], function(){
+    Route::get('/', 'CheckoutController@index')->name('index');
+    Route::post('/checkout', 'CheckoutController@checkout')->name('checkout');
+});
+
 // Admin page
 Route::get('/admin/login','Admin\LoginController@index')->name('admin.login')->middleware('checkLogout');
 Route::post('/admin/login', 'Admin\LoginController@handleLogin')->name('admin.handle.login');

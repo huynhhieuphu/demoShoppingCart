@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterCustomer;
 use App\Http\Requests\UpdateCustomer;
 use App\Customer;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCustomer;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\LoginCustomer;
 
@@ -119,7 +122,7 @@ class CustomerController extends Controller
         }
 
         $request->session()->flash('msgLogin',
-            '<div class="alert alert-danger"> <i class="fas fa-exclamation-triangle"></i> The user name or password is incorrect </div>');
+            '<div class="alert alert-danger"> <i class="bi bi-exclamation-triangle-fill"></i> The user name or password is incorrect </div>');
         return back();
     }
 
@@ -129,13 +132,34 @@ class CustomerController extends Controller
         return redirect()->route('home.index');
     }
 
-    public function showRegistrationForm()
+    public function showRegistrationForm(Request $request)
     {
-
+        $msgRegister = $request->session()->get('msgRegister');
+        return view('public.register', compact('msgRegister'));
     }
 
-    public function register()
+    public function register(RegisterCustomer $request)
     {
+        //dd($request->request);
+        $customer = Customer::create([
+            'username' => $request->username,
+            'password' => Hash::make($request->password),
+            'email' => $request->email,
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'status' => 1,
+            'created_at' => date('Y-m-d H:i:s')
+        ]);
 
+        if ($customer) {
+            $products = Product::inRandomOrder()->limit(4)->get();
+            $msgRegister = '<div class="alert alert-success"> <i class="bi bi-check-circle-fill"></i> Chúc mừng bạn đã đăng ký thành công.</div>';
+            return view('public.register-success', compact('products','msgRegister'));
+        }
+        $request->session()->flash('msgRegister',
+            '<div class="alert alert-danger"> <i class="bi bi-exclamation-triangle-fill"></i> Đăng ký thất bại </div>');
+        return back()->withInput();
     }
 }

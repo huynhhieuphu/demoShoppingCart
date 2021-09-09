@@ -29,7 +29,7 @@
                             <label class="form-check-label" for="remember">Ghi nhớ đăng nhập</label>
                         </div>
                         <button type="submit" class="btn btn-primary">Đăng nhập</button>
-                        <a href="#" class="text-decoration-none">Tạo tài khoản</a>
+                        <a href="{{route('admin.customer.register.form')}}" class="text-decoration-none">Tạo tài khoản</a>
                     </form>
                 </div>
             </div>

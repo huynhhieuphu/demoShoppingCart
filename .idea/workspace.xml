@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb36e542-4ac5-41e5-8645-eab78dc9448c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Customer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/checkout-success.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/checkout.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/register-success.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/06d2c6d3-984a-4d6f-8ff0-9e7777efce3f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/06d2c6d3-984a-4d6f-8ff0-9e7777efce3f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Customer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/customer/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/customer/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/checkLoginCustomer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/checkLoginCustomer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/cart.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/master-layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/master-layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
@@ -182,12 +183,13 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/shop" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/public" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/public" />
       <recent name="$PROJECT_DIR$/public/shop" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -251,7 +253,7 @@
       <workItem from="1630473383472" duration="246000" />
       <workItem from="1630942827524" duration="42526000" />
       <workItem from="1631101120149" duration="57000" />
-      <workItem from="1631101195985" duration="4740000" />
+      <workItem from="1631101195985" duration="18063000" />
     </task>
     <servers />
   </component>
@@ -278,10 +280,10 @@
       <screen x="31" y="23" width="1249" height="777" />
     </state>
     <state x="417" y="29" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/31.23.1249.777@31.23.1249.777" timestamp="1631001328505" />
-    <state x="372" y="154" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1631092835443">
+    <state x="372" y="154" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1631186252516">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="372" y="154" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.800@0.0.1280.800" timestamp="1631092835443" />
+    <state x="372" y="154" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.800@0.0.1280.800" timestamp="1631186252516" />
     <state x="394" y="173" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/31.23.1249.777@31.23.1249.777" timestamp="1630055790820" />
     <state width="824" height="197" key="GridCell.Tab.0.bottom" timestamp="1629812818067">
       <screen x="31" y="23" width="1249" height="777" />
@@ -303,10 +305,10 @@
       <screen x="31" y="23" width="1249" height="777" />
     </state>
     <state width="244" height="457" key="HiddenNamespacesPopup/31.23.1249.777@31.23.1249.777" timestamp="1629472523241" />
-    <state x="456" y="328" key="NewPhpFileDialog" timestamp="1631003713772">
+    <state x="456" y="328" key="NewPhpFileDialog" timestamp="1631177078407">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="456" y="328" key="NewPhpFileDialog/0.0.1280.800@0.0.1280.800" timestamp="1631003713772" />
+    <state x="456" y="328" key="NewPhpFileDialog/0.0.1280.800@0.0.1280.800" timestamp="1631177078407" />
     <state x="476" y="342" key="NewPhpFileDialog/31.23.1249.777@31.23.1249.777" timestamp="1631001229453" />
     <state x="136" y="28" key="SettingsEditor" timestamp="1631101176550">
       <screen x="0" y="0" width="1280" height="800" />

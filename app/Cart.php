@@ -60,7 +60,7 @@ class Cart
         session(['cart' => []]);
     }
 
-    public function getTotalPrice()
+    protected function getTotalPrice()
     {
         $result = 0;
         foreach ($this->items as $item) {
@@ -69,7 +69,7 @@ class Cart
         return $result;
     }
 
-    public function getTotalQuantity()
+    protected function getTotalQuantity()
     {
         $result = 0;
         foreach ($this->items as $item) {

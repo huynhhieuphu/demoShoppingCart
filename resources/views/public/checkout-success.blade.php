@@ -4,62 +4,12 @@
     <!-- cart section-->
     <section class="py-5 bg-light">
         <div class="container px-4 px-lg-5 mt-5">
-            <h2 class="fw-bolder mb-4"><i class="bi bi-cart4"></i> Cart</h2>
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered">
-                    <thead>
-                    <tr>
-                        <td>#</td>
-                        <td>Images</td>
-                        <td>Product</td>
-                        <td>Quantity</td>
-                        <td class="text-end">Price</td>
-                        <td class="text-end">Total</td>
-                        <td width="3%"></td>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @php($no = 0)
-                    @foreach($cart->items as $item)
-                        <?php
-                        $no++;
-                        $total = $item['quantity'] * $item['price'];
-                        ?>
-                        <tr>
-                            <td>{{$no}}</td>
-                            <td width="12%"><img src="{{asset('asset/uploads/images/'.$item['images'])}}"
-                                                 alt="{{$item['images']}}" class="img-fluid"></td>
-                            <td>{{$item['name']}}</td>
-                            <td width="5%">
-                                <form action="{{route('cart.update', ['id' => $item['id']])}}" method="get">
-                                    @csrf
-                                    <input type="text" value="{{$item['quantity']}}" size="6" name="quantity">
-                                    <button class="btn btn-primary btn-sm mt-2" type="submit">Update</button>
-                                </form>
-                            </td>
-                            <td class="text-end" width="16%">{{number_format($item['price'])}} VND</td>
-                            <td class="text-end" width="16%">{{number_format($total)}} VND</td>
-                            <td>
-                                <a href="{{route('cart.remove', ['id' => $item['id']])}}" class="btn btn-danger"
-                                   onclick="return confirm('Are you sure?')">
-                                    <i class="bi bi-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="5" class="text-end"><h4>Total</h4></td>
-                            <td colspan="2" class="text-end"><h4>{{number_format($cart->totalPrice)}} VND</h4></td>
-                        </tr>
-                    </tfoot>
-                </table>
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="col-12 col-sm-12 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
+                    <h2 class="fw-bolder mb-4">Thông Báo Thanh Toán</h2>
+                    @if(!empty($msgCheckout)) {!! $msgCheckout !!} @endif
+                </div>
             </div>
-            <a href="{{route('home.index')}}" class="btn btn-primary">Buy more</a>
-            <a href="{{route('cart.clear')}}" class="btn btn-danger">Clear all</a>
-            <a href="{{route('checkout.index')}}" class="btn btn-success">Check out</a>
-
         </div>
     </section>
     <!-- Related items section-->

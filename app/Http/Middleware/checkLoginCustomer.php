@@ -28,6 +28,6 @@ class checkLoginCustomer
             return $next($request);
         }
         return redirect()->route('admin.customer.login.form')->with('msg',
-            '<div class="alert alert-danger"> <i class="fas fa-exclamation-triangle"></i> Vui lòng đăng nhập </div>');
+            '<div class="alert alert-danger"> <i class="bi bi-exclamation-triangle-fill"></i> Vui lòng đăng nhập </div>');
     }
 }
