@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Http\Requests\SendMailContact;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactMail;
 
 class HomeController extends Controller
 {
@@ -30,5 +33,25 @@ class HomeController extends Controller
 //        $parentCategories = Category::where(['parent_id' => 0, 'status' => 1])->get();
         $products = Product::where(['category_id' => $product->category_id, 'status' => 1])->inRandomOrder()->limit(4)->get();
         return view('public.product', compact('product','products'));
+    }
+
+    public function showFormContact()
+    {
+        return view('public.contact');
+    }
+
+    public function sendmail(SendMailContact $request)
+    {
+//        dd($request->all());
+
+        $recipient = 'phuhh2019@gmail.com';
+        $sender= $request->sender;
+        $email = $request->email;
+        $messages = $request->messages;
+
+        Mail::to($recipient)->send(new ContactMail($sender, $email, $messages));
+
+        $msgContact = '<div class="alert alert-success"> <i class="bi bi-check-circle-fill"></i> Gửi GÓP Ý Thành Công</div>';
+        return view('public.contact-success',compact('msgContact'));
     }
 }

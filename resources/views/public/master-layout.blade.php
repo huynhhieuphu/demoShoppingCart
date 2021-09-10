@@ -22,32 +22,37 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
                 class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">About</a></li>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 menu-left">
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="#">About</a></li>
                 @foreach($parentCategories as $category)
-                    <li class="nav-item"><a class="nav-link"
-                                            href="{{route('home.category',['slug' => $category->slug])}}">{{$category->name}}</a>
+                    <li class="nav-item"><a
+                            class="nav-link {{ 'the-loai/' . $category->slug == Request::path() ? 'active' : '' }}"
+                            href="{{route('home.category',['slug' => $category->slug])}}">{{$category->name}}</a>
                     </li>
                 @endforeach
-{{--                <li class="nav-item dropdown">--}}
-{{--                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"--}}
-{{--                       data-bs-toggle="dropdown" aria-expanded="false">Shop</a>--}}
-{{--                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
-{{--                        <li><a class="dropdown-item" href="#!">All Products</a></li>--}}
-{{--                        <li>--}}
-{{--                            <hr class="dropdown-divider"/>--}}
-{{--                        </li>--}}
-{{--                        <li><a class="dropdown-item" href="#!">Popular Items</a></li>--}}
-{{--                        <li><a class="dropdown-item" href="#!">New Arrivals</a></li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
+                <li class="nav-item"><a
+                        class="nav-link {{ Route::currentRouteNamed('home.from.contact') ? 'active' : '' }}"
+                        aria-current="page" href="{{route('home.from.contact')}}">Liên hệ</a></li>
+                {{--                <li class="nav-item dropdown">--}}
+                {{--                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"--}}
+                {{--                       data-bs-toggle="dropdown" aria-expanded="false">Shop</a>--}}
+                {{--                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
+                {{--                        <li><a class="dropdown-item" href="#!">All Products</a></li>--}}
+                {{--                        <li>--}}
+                {{--                            <hr class="dropdown-divider"/>--}}
+                {{--                        </li>--}}
+                {{--                        <li><a class="dropdown-item" href="#!">Popular Items</a></li>--}}
+                {{--                        <li><a class="dropdown-item" href="#!">New Arrivals</a></li>--}}
+                {{--                    </ul>--}}
+                {{--                </li>--}}
             </ul>
             <div class="d-flex">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mx-2">
                     @if(Auth::guard('cus')->check())
                         <li class="nav-item dropdown">
                             <a class="nav-link active dropdown-toggle" id="navbarDropdownRight" href="#" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">{{Auth::guard('cus')->user()->username}}</a>
+                               data-bs-toggle="dropdown"
+                               aria-expanded="false">{{Auth::guard('cus')->user()->username}}</a>
                             <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdownRight">
                                 <li><a class="dropdown-item" href="{{route('admin.customer.logout')}}">Logout</a></li>
                             </ul>

@@ -17,6 +17,9 @@ Route::get('/', 'HomeController@index')->name('home.index');
 Route::get('/the-loai/{slug}', 'HomeController@category')->name('home.category');
 Route::get('/san-pham/{slug}', 'HomeController@product')->name('home.product');
 
+Route::get('/lien-he', 'HomeController@showFormContact')->name('home.from.contact');
+Route::post('/lien-he', 'HomeController@sendmail')->name('home.send.mail');
+
 // login shopping
 Route::group([
     'as' => 'admin.customer.',

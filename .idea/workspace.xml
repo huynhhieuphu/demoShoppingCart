@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb36e542-4ac5-41e5-8645-eab78dc9448c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/public/checkout-success.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/public/checkout.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/public/register-success.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/public/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/06d2c6d3-984a-4d6f-8ff0-9e7777efce3f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/06d2c6d3-984a-4d6f-8ff0-9e7777efce3f.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/contact-mail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/contact-success.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/public/contact.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/checkLoginCustomer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/checkLoginCustomer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/cart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/public/master-layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/master-layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -253,7 +247,7 @@
       <workItem from="1630473383472" duration="246000" />
       <workItem from="1630942827524" duration="42526000" />
       <workItem from="1631101120149" duration="57000" />
-      <workItem from="1631101195985" duration="18063000" />
+      <workItem from="1631101195985" duration="32047000" />
     </task>
     <servers />
   </component>
@@ -305,10 +299,10 @@
       <screen x="31" y="23" width="1249" height="777" />
     </state>
     <state width="244" height="457" key="HiddenNamespacesPopup/31.23.1249.777@31.23.1249.777" timestamp="1629472523241" />
-    <state x="456" y="328" key="NewPhpFileDialog" timestamp="1631177078407">
+    <state x="456" y="328" key="NewPhpFileDialog" timestamp="1631246852768">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="456" y="328" key="NewPhpFileDialog/0.0.1280.800@0.0.1280.800" timestamp="1631177078407" />
+    <state x="456" y="328" key="NewPhpFileDialog/0.0.1280.800@0.0.1280.800" timestamp="1631246852768" />
     <state x="476" y="342" key="NewPhpFileDialog/31.23.1249.777@31.23.1249.777" timestamp="1631001229453" />
     <state x="136" y="28" key="SettingsEditor" timestamp="1631101176550">
       <screen x="0" y="0" width="1280" height="800" />
@@ -319,6 +313,10 @@
       <screen x="31" y="23" width="1249" height="777" />
     </state>
     <state x="324" y="98" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/31.23.1249.777@31.23.1249.777" timestamp="1630985742815" />
+    <state x="429" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1631257407286">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="429" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.800@0.0.1280.800" timestamp="1631257407286" />
     <state x="247" y="136" width="816" height="550" key="find.popup" timestamp="1630999470912">
       <screen x="31" y="23" width="1249" height="777" />
     </state>
