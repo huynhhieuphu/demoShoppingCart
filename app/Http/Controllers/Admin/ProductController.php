@@ -85,7 +85,7 @@ class ProductController extends Controller
         $images = [];
         if ($request->hasFile('images')) {
             // delete all old pictures
-            $arrOldImages = explode('|', $oldImages);
+            $arrOldImages = json_decode($oldImages);
             foreach ($arrOldImages as $oldImage){
                 $pathImages = public_path('asset/uploads/images/'.$oldImage);
                 if(File::exists($pathImages)){
@@ -130,7 +130,7 @@ class ProductController extends Controller
         $product = Product::findOrFail($request->product);
         // delete all picture by id product
         $images = $product->images;
-        $arrImages = explode('|', $images);
+        $arrImages = json_decode($images);
         foreach ($arrImages as $image){
             $path = public_path('asset/uploads/images/'. $image);
             if(File::exists($path)){

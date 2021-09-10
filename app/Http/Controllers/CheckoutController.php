@@ -9,6 +9,8 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use  App\Http\Requests\StoreCheckout;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\CheckoutMail;
 
 class CheckoutController extends Controller
 {
@@ -21,6 +23,8 @@ class CheckoutController extends Controller
     public function checkout(StoreCheckout $request, Cart $cart)
     {
         $id = Auth::guard('cus')->id();
+        $toEmail = Auth::guard('cus')->user()->email;
+
         $order = Order::create([
             'customer_id' => $id,
             'full_name' => $request->full_name,
@@ -41,11 +45,14 @@ class CheckoutController extends Controller
                     'created_at' => date('Y-m-d H:i:s')
                 ]);
             }
+
+            Mail::to($toEmail)->send(new CheckoutMail($order->id, $cart));
+
             $cart->clear();
 
             $products = Product::inRandomOrder()->limit(4)->get();
             $msgCheckout = '<div class="alert alert-success"> <i class="bi bi-check-circle-fill"></i> Thanh toán thành công</div>';
-            return view('public.checkout-success',compact('products', 'msgCheckout'));
+            return view('public.checkout-success', compact('products', 'msgCheckout'));
         }
         $request->session()->flash('msgCheckout',
             '<div class="alert alert-danger"> <i class="bi bi-exclamation-triangle-fill"></i> Thanh toán bị lỗi </div>');
