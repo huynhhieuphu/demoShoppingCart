@@ -18,7 +18,7 @@
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Sales quantity
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{number_format($total_money)}} VND</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -35,7 +35,7 @@
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                 Product sold
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">100</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$total_sell}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -52,7 +52,7 @@
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Total Orders
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$count_orders}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-shopping-cart fa-2x text-gray-300"></i>
@@ -69,7 +69,7 @@
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                 Total Products
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$count_products}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-archive fa-2x text-gray-300"></i>
@@ -89,51 +89,22 @@
                 <div class="card-body">
                     <table class="table table-bordered table-sm">
                         <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Order</th>
-                                <th>Products</th>
-                                <th>Total</th>
-                                <th>Created At</th>
-                            </tr>
+                        <tr>
+                            <th>Order</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Created At</th>
+                        </tr>
                         </thead>
                         <tbody>
+                        @foreach($new_orders as $order)
                             <tr>
-                                <td>1</td>
-                                <th>1</th>
-                                <th>3</th>
-                                <th>1,000,000</th>
-                                <th>07/09/2021</th>
+                                <th>{{$order->id}}</th>
+                                <th>{{$order->total_quantity}}</th>
+                                <th>{{number_format($order->total_price)}} VND</th>
+                                <th>{{$order->created_at}}</th>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <th>1</th>
-                                <th>3</th>
-                                <th>1,000,000</th>
-                                <th>07/09/2021</th>
-                            </tr><tr>
-                                <td>1</td>
-                                <th>1</th>
-                                <th>3</th>
-                                <th>1,000,000</th>
-                                <th>07/09/2021</th>
-                            </tr><tr>
-                                <td>1</td>
-                                <th>1</th>
-                                <th>3</th>
-                                <th>1,000,000</th>
-                                <th>07/09/2021</th>
-                            </tr><tr>
-                                <td>1</td>
-                                <th>1</th>
-                                <th>3</th>
-                                <th>1,000,000</th>
-                                <th>07/09/2021</th>
-                            </tr>
-
-
-
-
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
