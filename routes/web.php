@@ -89,3 +89,6 @@ Route::group([
     Route::get('/logout', 'LoginController@logout')->name('logout');
 });
 
+Route::group(['prefix' => 'laravel-filemanager', 'middleware'], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});

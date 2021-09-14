@@ -16,13 +16,13 @@
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <!-- Topbar Search -->
             @if(!empty($msg)) {!! $msg !!} @endif
-            <form
+            <form action="{{route('admin.category.index')}}" method="GET"
                 class="d-sm-inline-block form-inline navbar-search float-sm-right">
                 <div class="input-group">
                     <input type="text" class="form-control bg-light border-1 small" placeholder="Search for..."
-                           aria-label="Search" aria-describedby="basic-addon2">
+                           aria-label="Search" aria-describedby="basic-addon2" name="keywords">
                     <div class="input-group-append">
-                        <button class="btn btn-primary" type="button">
+                        <button class="btn btn-primary" type="submit">
                             <i class="fas fa-search fa-sm"></i>
                         </button>
                     </div>
@@ -39,6 +39,7 @@
                     <th>#</th>
                     <th>Category</th>
                     <th>Parent</th>
+                    <th>Root</th>
                     <th>Total</th>
                     <th>Status</th>
                     <th>Action</th>
@@ -52,7 +53,7 @@
                         <td width="6%">{{$count}}</td>
                         <td>{{$category->name}}</td>
                         <td width="16%">
-                            {{$category->parent_id}}
+{{--                            {{$category->getParentName($category->parent_id)}}--}}
                         </td>
                         <td width="8%">{{$category->child->count()}}</td>
                         <td width="8%">
@@ -78,7 +79,7 @@
                 @endforeach
                 </tbody>
             </table>
-            {{$categories->links()}}
+            {{$categories->withQueryString()->links()}}
         </div>
     </div>
 @endsection

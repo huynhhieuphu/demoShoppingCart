@@ -13,14 +13,17 @@ use App\Helper\Helper;
 
 class CategoryController extends Controller
 {
-    const LIMIT_ROWS = 7;
+    const LIMIT_ROWS = 3;
 
     public function index(Request $request)
     {
-        $data['title'] = 'Category';
-        $data['categories'] = Category::paginate(self::LIMIT_ROWS);
-        $data['msg'] = $request->session()->get('msg');
-        return view('admin.category.index', $data);
+        $title = 'Category';
+        $categories = Category::search()->paginate(self::LIMIT_ROWS);
+//        if($request->has('keywords')){
+//            $categories = Category::where('name', 'LIKE', '%'. $request->keywords . '%')->paginate(self::LIMIT_ROWS);
+//        }
+        $msg = $request->session()->get('msg');
+        return view('admin.category.index', compact('title', 'categories', 'msg'));
     }
 
     public function create(Request $request)
@@ -89,9 +92,15 @@ class CategoryController extends Controller
     public function destroy(Request $request)
     {
         $category = Category::findOrFail($request->category);
-        $category->delete();
+//        dd($category->products->count());
+        if ($category->child->count() === 0 && $category->products->count() === 0) {
+            $category->delete();
+            $request->session()->flash('msg',
+                '<div class="alert alert-success"> <i class="fas fa-check-circle"></i> Delete Success </div>');
+            return redirect()->route('admin.category.index');
+        }
         $request->session()->flash('msg',
-            '<div class="alert alert-success"> <i class="fas fa-check-circle"></i> Delete Success </div>');
-        return redirect()->route('admin.category.index');
+            '<div class="alert alert-warning"> <i class="fas fa-exclamation-triangle"></i> Can\'t Delete </div>');
+        return back();
     }
 }

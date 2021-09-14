@@ -97,6 +97,8 @@
 <!-- Custom scripts for all pages-->
 <script src="{{asset('asset/js/sb-admin-2.min.js')}}"></script>
 
+
+<script src="{{asset('asset/vendor/ckeditor/ckeditor.js')}}"></script>
 @stack('script')
 
 </body>

@@ -29,7 +29,8 @@
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea name="description" id="description" class="form-control" rows="5">{{old('description')}}</textarea>
+                            <textarea name="description" id="description" class="form-control"
+                                      rows="5" style="resize: none">{{old('description')}}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="images[]">Choose file</label>
@@ -98,3 +99,18 @@
         </div>
     </div>
 @endsection
+
+@push('script')
+    <script>
+        var options = {
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+        };
+
+        // Replace the <textarea id="description"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace('description', options);
+    </script>
+@endpush

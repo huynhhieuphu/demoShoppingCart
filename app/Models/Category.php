@@ -12,11 +12,24 @@ class Category extends Model
 
     public function child()
     {
-        return $this->hasMany('App\Models\Category', 'parent_id','id');
+        return $this->hasMany(self::Class, 'parent_id');
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(self::Class, 'parent_id');
     }
 
     public function products()
     {
-        return $this->hasMany('App\Models\Product', 'category_id','id');
+        return $this->hasMany('App\Models\Product', 'category_id');
+    }
+
+    public function scopeSearch($query)
+    {
+        if (request()->has('keywords')) {
+            $query->where('name', 'LIKE', '%' . request()->keywords . '%');
+        }
+        return $query;
     }
 }
