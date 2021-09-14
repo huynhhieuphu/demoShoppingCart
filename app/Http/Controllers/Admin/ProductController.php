@@ -59,7 +59,7 @@ class ProductController extends Controller
             return redirect()->route('admin.product.create');
         }
         $request->session()->flash('msg','<div class="alert alert-danger"> <i class="fas fa-exclamation-triangle"></i> Insert Failed </div>');
-        return back();
+        return back()->withInput();
     }
 
     public function show()

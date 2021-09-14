@@ -81,9 +81,9 @@ Route::group([
         Route::get('/','BannerController@index')->name('index');
         Route::get('/create','BannerController@create')->name('create');
         Route::post('/create','BannerController@store')->name('store');
-        Route::get('/edit/{$id}','BannerController@edit')->name('edit');
-        Route::put('/update/{$id}','BannerController@update')->name('update');
-        Route::delete('/delete/{$id}', 'BannerController@update')->name('delete');
+        Route::get('/edit/{id}','BannerController@edit')->name('edit');
+        Route::put('/update/{id}','BannerController@update')->name('update');
+        Route::delete('/delete/{id}', 'BannerController@delete')->name('delete');
     });
 
     Route::get('/logout', 'LoginController@logout')->name('logout');

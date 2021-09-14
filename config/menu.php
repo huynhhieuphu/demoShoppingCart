@@ -23,7 +23,7 @@ return [
         'name' => 'Design',
         'sub-menu' => [
             [
-                'href' => 'admin.site.index',
+                'href' => 'admin.banner.index',
                 'name' => 'Banner'
             ],
         ]

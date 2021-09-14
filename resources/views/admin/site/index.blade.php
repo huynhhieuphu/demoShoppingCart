@@ -99,10 +99,10 @@
                         <tbody>
                         @foreach($new_orders as $order)
                             <tr>
-                                <th>{{$order->id}}</th>
-                                <th>{{$order->total_quantity}}</th>
-                                <th>{{number_format($order->total_price)}} VND</th>
-                                <th>{{$order->created_at}}</th>
+                                <td>{{$order->id}}</td>
+                                <td>{{$order->total_quantity}}</td>
+                                <td>{{number_format($order->total_price)}} VND</td>
+                                <td>{{$order->created_at}}</td>
                             </tr>
                         @endforeach
                         </tbody>

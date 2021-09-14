@@ -23,13 +23,13 @@
                             <label for="name">Product</label>
                             <input type="text" name="name" id="name"
                                    class="form-control @error('name') is-invalid @enderror"
-                                   value="{{request()->input('name') ?? old('name')}}">
+                                   value="{{old('name')}}">
                             @error('name')
                             <div class="invalid-feedback">{{$message}}</div> @enderror
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea name="description" id="description" class="form-control" rows="5">{{request()->input('description') ?? old('description')}}</textarea>
+                            <textarea name="description" id="description" class="form-control" rows="5">{{old('description')}}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="images[]">Choose file</label>

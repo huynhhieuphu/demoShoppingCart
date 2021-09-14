@@ -12,6 +12,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{asset('public/css/styles.css')}}" rel="stylesheet"/>
+    <style>
+        body, html {
+            height: 100%;
+        }
+
+        header.banner {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url({{asset('asset/uploads/banners/'. $bannerShop->images)}});
+            height: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
 <!-- Navigation-->
@@ -72,7 +86,7 @@
     </div>
 </nav>
 <!-- Header-->
-<header class="bg-dark py-5">
+<header class="py-5 banner">
     <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
             <h1 class="display-4 fw-bolder">Shop in style</h1>
