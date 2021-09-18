@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index')->name('home.index');
+Route::get('/thong-tin', 'HomeController@about')->name('home.about');
 Route::get('/the-loai/{slug}', 'HomeController@category')->name('home.category');
 Route::get('/san-pham/{slug}', 'HomeController@product')->name('home.product');
 
@@ -67,12 +68,25 @@ Route::group([
 ], function(){
     Route::get('/','SiteController@index')->name('site.index');
 
+
+    Route::group([
+        'prefix' => '/customer',
+        'as' => 'customer.'
+    ], function () {
+        Route::get('/show-trash', 'CustomerController@showTrash')->name('show.trash');
+        Route::post('/put-back/{id}', 'CustomerController@putBack')->name('put.back');
+        Route::delete('/delete-immediately/{id}', 'CustomerController@deleteImmediately')->name('delete.immediately');
+    });
+
+    // lưu ý: khi muốn thêm route khác vào trong method resource, nên đặt trên method resource
     Route::resources([
         'category' => 'CategoryController',
         'user' => 'UserController',
         'product' => 'ProductController',
         'customer'=> 'CustomerController',
     ]);
+
+
 
     Route::group([
         'prefix' => '/banner',
@@ -89,6 +103,6 @@ Route::group([
     Route::get('/logout', 'LoginController@logout')->name('logout');
 });
 
-Route::group(['prefix' => 'laravel-filemanager', 'middleware'], function () {
-    \UniSharp\LaravelFilemanager\Lfm::routes();
-});
+//Route::group(['prefix' => 'laravel-filemanager', 'middleware' => 'checkLogin'], function () {
+//    \UniSharp\LaravelFilemanager\Lfm::routes();
+//});

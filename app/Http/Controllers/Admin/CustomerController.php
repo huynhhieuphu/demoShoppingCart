@@ -91,11 +91,7 @@ class CustomerController extends Controller
 
     public function destroy(Request $request)
     {
-//        $customer = Customer::findOrFail($request->customer);
-//        $customer->status = 0;
-//        $customer->save();
-
-        Customer::where('id', $request->customer)->update(['status' => 0]);
+        Customer::find($request->customer)->delete();
         return redirect()->route('admin.customer.index')
             ->with('msg',
                 '<div class="alert alert-success"> <i class="fas fa-check-circle"></i> Delete Success </div>');
@@ -161,5 +157,47 @@ class CustomerController extends Controller
         $request->session()->flash('msgRegister',
             '<div class="alert alert-danger"> <i class="bi bi-exclamation-triangle-fill"></i> Đăng ký thất bại </div>');
         return back()->withInput();
+    }
+
+    public function showTrash()
+    {
+        $title = 'Trash Customer';
+        $customers = Customer::onlyTrashed()->get();
+        return view('admin.customer.trash', compact('title','customers'));
+    }
+
+    public function putBack($id)
+    {
+        $customer = Customer::withTrashed()->find($id);
+
+        if($customer){
+            $customer->restore();
+            return response()->json([
+                'code' => 200,
+                'message' => 'phuc hoi khach hang thanh cong',
+                'url' => route('admin.customer.show.trash')
+            ]);
+        }
+        return response()->json([
+            'code' => 404,
+            'message' => 'phuc hoi khach hang that bai'
+        ]);
+    }
+
+    public function deleteImmediately(Request $request, $id)
+    {
+        $customer = Customer::withTrashed()->find($id);
+        if($customer){
+            $customer->forceDelete();
+            return response()->json([
+                'code' => 200,
+                'message' => 'xoa khach hang thanh cong',
+                'url' => route('admin.customer.show.trash')
+            ]);
+        }
+        return response()->json([
+            'code' => 404,
+            'message' => 'xoa khach hang that bai'
+        ]);
     }
 }

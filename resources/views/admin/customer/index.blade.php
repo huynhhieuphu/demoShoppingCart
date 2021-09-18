@@ -28,6 +28,7 @@
                     </div>
                 </div>
             </form>
+            <a href="{{route('admin.customer.show.trash')}}" class="btn btn-secondary"><i class="fa fa-trash" aria-hidden="true"></i></a>
         </div>
     </div>
 

@@ -54,4 +54,9 @@ class HomeController extends Controller
         $msgContact = '<div class="alert alert-success"> <i class="bi bi-check-circle-fill"></i> Gửi GÓP Ý Thành Công</div>';
         return view('public.contact-success',compact('msgContact'));
     }
+
+    public function about()
+    {
+        return view('public.api');
+    }
 }

@@ -19,7 +19,7 @@
 
         header.banner {
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url({{asset('asset/uploads/banners/'. $bannerShop->images)}});
+            url({{asset('asset/uploads/banners/'. $bannerShop->images)}});
             height: 50%;
             background-position: center;
             background-repeat: no-repeat;
@@ -37,7 +37,9 @@
                 class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 menu-left">
-                <li class="nav-item"><a class="nav-link" aria-current="page" href="#">About</a></li>
+                <li class="nav-item"><a
+                        class="nav-link {{ Route::currentRouteNamed('home.about') ? 'active' : '' }}"
+                        aria-current="page" href="{{route('home.about')}}">About</a></li>
                 @foreach($parentCategories as $category)
                     <li class="nav-item"><a
                             class="nav-link {{ 'the-loai/' . $category->slug == Request::path() ? 'active' : '' }}"
@@ -102,6 +104,7 @@
     <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
 </footer>
 <!-- Bootstrap core JS-->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
 <script src="{{asset('public/js/scripts.js')}}"></script>

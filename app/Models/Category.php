@@ -8,6 +8,10 @@ class Category extends Model
 {
     protected $table = 'categories';
 
+    protected $fillable = ['name', 'slug', 'status'];
+
+    protected $hidden = ['updated_at'];
+
     public $timestamps = false;
 
     public function child()
@@ -32,4 +36,5 @@ class Category extends Model
         }
         return $query;
     }
+
 }
